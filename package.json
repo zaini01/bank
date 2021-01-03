@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Kamu akan membuat aplikasi system bank sederhana menggunakan Express dan Sequelize. Baca tiap specification dengan baik, ikuti apa yang diminta.",
   "main": "app.js",
-  "script": {
+  "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node app.js"
   },
