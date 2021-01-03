@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="margin: auto;width: 400px;border: 3px solid green;padding: 20px;">
+        <form action="/customers/<%= data.CustomerId %>/accounts/<%= data.id %>/transfer" method="post">
+            <p>
+                <label>Transfer From: </label>
+                
+                <label><strong><%= data.accountNumber %> On Account <%= data.balance %></strong></label></p>
+                <input type="hidden" name="balance" value="<%=data.balance%>">
+            <p>
+                <label>Amount: </label>
+                <input type="text" name="amount" placeholder="0">
+            </p>
+            <p>
+                <label>Transfer To: </label>
+                <select name='otherAccountId'>
+                    <% accounts.forEach(e=>{ %>
+                        <option value="<%=e.id%>"> <%=e.accountNumber%> - <%=e.Customer.fullName %> </option>
+                    <% }) %>
+                </select>
+            </p>
+            <button type="submit">TRANSFER</button>
+        </form>
+    </div>
+    <% if (error) { %>
+        <h3 style="text-align: center;color: crimson;;"><%= error %></h3>
+    <% }%>
+</body>
+</html>

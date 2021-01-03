@@ -1,0 +1,26 @@
+{
+  "name": "bank",
+  "version": "1.0.0",
+  "description": "Kamu akan membuat aplikasi system bank sederhana menggunakan Express dan Sequelize. Baca tiap specification dengan baik, ikuti apa yang diminta.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EurydiceAndOrpheus/bank.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EurydiceAndOrpheus/bank/issues"
+  },
+  "homepage": "https://github.com/EurydiceAndOrpheus/bank#readme",
+  "dependencies": {
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "pg": "^8.5.1",
+    "sequelize": "^6.3.5"
+  }
+}

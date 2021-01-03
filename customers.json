@@ -1,0 +1,13 @@
+[{
+    "identityNumber" : "123123123123123123",
+    "fullName" : "Alex Sen",
+    "address" : "Jakarta",
+    "birthDate" : "08/03/2000",
+    "gender" : "male"
+  },{
+    "identityNumber" : "1234567891234567",
+    "fullName" : "Ardi",
+    "address" : "Surabaya",
+    "birthDate" : "01/05/2000",
+    "gender" : "male"
+  }]

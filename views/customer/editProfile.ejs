@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style="margin: auto;width: 200px;border: 3px solid green;padding: 20px;">
+        <form action="/customers/<%= customer.id %>/editProfile" method="post">
+            <label><strong>ID Number:</strong></label>
+            <p><input type="text" name="identityNumber" value="<%= customer.identityNumber %>"></p>
+      
+            <label><strong>Full Name:</strong></label>
+            <p><input type="text" name="fullName" value="<%= customer.fullName %>"></p>
+      
+            <label><strong>Address:</strong></label>
+            <p><input type="textarea" name="address" value="<%= customer.address %>"></p>
+      
+            <label><strong>Birth Date:</strong></label>
+            <p><input type="date" name="birthDate" value="<%= customer.birthDate %>"></p>
+      
+            <label><strong>Gender:</strong></label>
+            <p>
+                <% let checked = "" %>
+                <% customer.gender == "male" ? checked = "checked" : checked = ""  %>
+                <input type="radio" name="gender" value="male" <%= checked %>>Male<br>
+                <% customer.gender == "female" ? checked = "checked" : checked = ""  %>
+                <input type="radio" name="gender" value="female" <%= checked %>>Female<br>
+              
+            </p>
+            <p><button type="submit"> UPDATE </button></p>
+        </form>
+    </div>
+    <br>
+    <% if (errors) { %>
+        <% errors.forEach(e=>{ %>
+            <h3 style="text-align: center;color: crimson;"><%= e %></h3>
+        <% }) %>
+    <% }%>
+</body>
+</html>

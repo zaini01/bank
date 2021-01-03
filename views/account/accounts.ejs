@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p style="text-align: center;"><a href="/customers/">BACK</a></p>
+    <h1 style="text-align: center;">Good day, <%= data.fullName %></h1>
+    <table style="margin-left: auto;margin-right: auto;" border="1">
+      <thead>
+        <tr>
+            <th>Account Number</th>
+            <th>Type</th>
+            <th>Balance</th>
+            <th>Action</th>
+        </tr>
+      </thead>
+      <tbody>
+        <p>
+            <% data.Accounts.forEach(e=>{ %>
+                <tr>
+                    <td><%= e.accountNumber %></td>
+                    <td><%= e.type %></td>
+                    <td><%= e.balance %></td>
+                    <td><a href="/customers/<%= data.id %>/accounts/<%= e.id %>/transfer">transfer</a></td>
+                </tr>
+            <% }) %>
+        </p>
+      </tbody>
+    </table>
+    <br><br><br>
+    <div style="margin: auto;width: 200px;border: 3px solid green;padding: 20px;">
+        <h2><u>ADD ACCOUNT</u></h2>
+        <form action="/customers/<%= data.id %>/accounts" method="post">
+            <label><strong>Account Type:</strong></label>
+            <p>
+                <select name="type">
+                <option value="On Account">On Account</option>
+                <option value="Xtra Payroll">Xtra Payroll</option>
+                <option value="Tabungaku">Tabunganku</option>
+                </select>
+            </p>
+            <label><strong>Balance:</strong></label>
+            <p>
+                <input type="text" name="balance" placeholder="0">
+            </p>
+            <button type="submit">SAVE</button>
+        </form>
+    </div>
+    <br>
+    <% if (errors) { %>
+            <% errors.forEach(e=>{ %>
+                <h3 style="text-align: center;color: crimson;"><%= e %></h3>
+            <% }) %>
+    <% }%>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+<body>
+    <div style="margin: auto;width: 200px;border: 3px solid green;padding: 20px;">
+        <form action="/customers/register" method="post">
+            <label><strong>ID Number:</strong></label>
+            <p><input type="text" name="identityNumber" placeholder="Input your id number"></p>
+    
+            <label><strong>Full Name:</strong></label>
+            <p><input type="text" name="fullName" placeholder="Input your full name"></p>
+    
+            <label><strong>Address:</strong></label>
+            <p><input type="textarea" name="address" placeholder="Input your address"></p>
+    
+            <label><strong>Birth Date:</strong></label>
+            <p><input type="date" name="birthDate"></p>
+    
+            <label><strong>Gender:</strong></label>
+            <p>
+            <input type="radio" name="gender" value="male">Male<br>
+            <input type="radio" name="gender" value="female">Female<br>
+            </p>
+            <p><button type="submit"> REGISTER </button></p>
+        </form>
+    </div>
+    <br>
+    <% if (errors) { %>
+        <% errors.forEach(e=>{ %>
+            <h3 style="text-align: center;color: crimson;"><%= e %></h3>
+        <% }) %>
+    <% }%>
+</body>
+</html>
