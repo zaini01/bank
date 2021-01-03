@@ -19,7 +19,8 @@
     "database": "dattrqov5gdi00",
     "host": "ec2-3-215-40-176.compute-1.amazonaws.com",
     "dialect": "postgres",
-    "protocol":"postgres",
-    "ssl":true
+    "dialectOptions": {
+      "ssl": true
+    }
   }
 }
